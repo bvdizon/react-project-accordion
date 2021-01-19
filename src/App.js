@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
+import Accordion from './components/Accordion';
+import data from './components/data';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class='container'>
+      <h1>Frequently Ask Questions</h1>
+      {data.map((question) => (
+        <Accordion key={question.id} {...question} />
+      ))}
     </div>
   );
-}
+};
 
 export default App;
